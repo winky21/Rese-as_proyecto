@@ -1,0 +1,62 @@
+﻿@page
+@model Reseñas.Pages.ComentariosModel
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/css/Inicio.css">
+
+  
+<h2 class="lista">Comentarios de Peliculas</h2>
+        <!-- Contenido dinámico generado a partir de los perfiles -->
+        @foreach (var pelicula in Model.Peliculas)
+        {
+
+            <div class="card">
+                <h2>@pelicula.Titulo</h2>
+                <p>@pelicula.Descripcion</p>
+                <p>Año: @pelicula.Año</p>
+                <p class="rating">Puntuacion: @pelicula.Rating</p>
+                <a class="reviews-link" href="">Leer reseñas</a>
+                <p><a class="reviews-link" href="">Añadir a mi lista</a></p>
+            
+                    <p><b>Comentarios:</b></p>
+
+
+                    @foreach (var comentario in pelicula.Comentarios)
+                    {
+                        if (pelicula.ID == comentario.PeliculaId)
+                        {
+                            <div class="comment">
+                                <b>@comentario.Autor:</b> @comentario.Puntuacion <br />
+                                "@comentario.ComentarioTexto"
+                            </div>
+                        }
+                    }
+                    <form method="post" asp-page-handler="CrearComentario" asp-route-peliculaId="@pelicula.ID">
+                        <input type="text" name="autor" placeholder="Nombre" required />
+                        <input type="number" name="puntuacion" placeholder="Puntuación" required />
+                        <textarea name="comentario" placeholder="Escribe tu comentario" required></textarea>
+                        <button type="submit">Enviar comentario</button>
+                    </form>
+             </div>
+
+                
+           
+
+
+
+
+
+
+
+            @*
+        <div class="comentarios">
+        <p>Comentarios: </p>
+        <button type="submit" class="comentarios">Ver reseñas</button>
+
+
+
+        </div>*@
+
+        }
+    </div>

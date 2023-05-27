@@ -1,0 +1,19 @@
+﻿@page
+@model Reseñas.Pages.PeliculasModel
+@{
+}
+<link rel="stylesheet" type="text/css" href="~/css/Inicio.css">
+
+<h2 class="lista">Peliculas por tematica</h2>
+
+@foreach (var pelicula in Model.Peliculas)
+{
+    <div class="card">
+        <h2>@pelicula.Titulo</h2>
+        <p>@pelicula.Descripcion</p>
+        <p>Año: @pelicula.Año</p>
+        <p class="rating">Puntuacion: @pelicula.Rating</p>
+        <a class="reviews-link" asp-page="/Comentarios">Leer reseñas</a>
+        <p><a class="reviews-link" href="">Añadir a mi lista</a></p>
+    </div>
+}

@@ -1,0 +1,133 @@
+﻿/*main{
+    margin-left:10em;
+}*/
+
+h1, h2, h3 {
+    color: #333;
+}
+button {
+    background-color: #bdc7F8;
+}
+ /*Estilos de encabezado */
+
+
+/*Estilos de tarjeta de reseña */
+.review-card {
+    background-color: #e0e0e0; /*Gris claro*/
+    border: 2px solid #ccc;
+    margin-right: 50px;
+    margin-left: 21em;
+    padding: 20px;
+    margin-bottom: 30px;
+    position:relative;
+    top: 4em;
+    /*width: 40em;*/
+}
+
+
+    .review-card p {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+
+.read-more {
+    display: inline-block;
+    background-color: #4caf50;  /*Verde claro*/ 
+    color: #fff; /* Texto en blanco */
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* Estilos de pie de página */
+
+.row h2 {
+    background-color: aliceblue;
+}
+.checkbox {
+    background-color: aliceblue;
+
+}
+
+.movie-selection {
+    background-color: darkcyan;
+    
+}
+.card {
+    color: white;
+    background-color: darkcyan;
+    /*width: 81em;*/
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left:20em;
+    margin-right:1em;
+}
+.rating {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.reviews-link {
+    text-decoration: none;
+    color: blue;
+}
+.lista { 
+    color: white;
+    background-color: darkcyan;
+    text-align:center;
+   
+}
+textarea{
+    width:50em
+}
+.trailer-link{
+    color: black;
+}
+.añadir {
+    margin-left: 50em;
+    margin-top:2em;
+    background-color: darkcyan;
+    color: #bdc7F8;
+    padding: 2em;
+    width: 30em;
+    border-radius: 10px;
+   
+}
+
+    .añadir h2 {
+        text-align: center;
+    }
+
+    .añadir form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .añadir label {
+        margin-top: 1em;
+    }
+
+    .añadir input[type="text"],
+    .añadir input[type="number"],
+    .añadir textarea {
+        width: 100%;
+        padding: 0.5em;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .añadir button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        background-color: #bdc7F8;
+        color: darkcyan;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .añadir button:hover {
+            background-color: #a6b2e1;
+        }

@@ -1,0 +1,63 @@
+﻿@page
+@model Reseñas.Pages.AñadirPeliculaModel
+@{
+}
+<link rel="stylesheet" type="text/css" href="~/css/Inicio.css">
+
+<div class="añadir">
+<h2>Agregar Película o Serie</h2>
+
+<form method="post">
+    <div>
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="EsPelicula">
+            <option value="true">Película</option>
+            <option value="false">Serie</option>
+        </select>
+    </div>
+    <div>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="Titulo" required>
+    </div>
+    <div>
+        <label for="tematica">Temática:</label>
+            <select id="tematica" name="Tematica" class="form-control">
+                <option value="acción">Acción</option>
+                <option value="aventura">Aventura</option>
+                <option value="humor">Humor</option>
+                <option value="drama">Drama</option>
+                <option value="terror">Terror</option>
+                <option value="ciencia ficción">Ciencia ficción</option>
+                <option value="romance">Romance</option>
+                <option value="animacion">Animación</option>
+                <option value="fantasía">Fantasía</option>
+                <option value="documental">Documental</option>
+                <option value="musical">Musical</option>
+                <option value="thriller">Thriller</option>
+                <option value="western">Western</option>
+                <option value="histórico">Histórico</option>
+                <option value="crimen">Crimen</option>
+                <option value="misterio">Misterio</option>
+                <option value="guerra">Guerra</option>
+                <option value="biografia">Biografía</option>
+                <option value="familiar">Familiar</option>
+                <option value="deporte">Deporte</option>
+                <option value="ficción">ficción</option>
+            </select>
+    </div>
+    <div>
+        <label for="año">Año:</label>
+        <input type="number" id="año" name="Año" required>
+    </div>
+    
+    <div>
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="Rating" step="0.1" required>
+        </div>
+    <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="Descripcion" required></textarea>
+    </div>
+    <button type="submit">Agregar</button>
+</form>
+</div>

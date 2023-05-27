@@ -1,0 +1,134 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Reseñas</title>
+    @*<link rel="stylesheet" href="~/css/Inicio.css" type="text/css">*@
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" type="text/css"/>
+   @* <link rel="stylesheet" href="~/Reseñas.styles.css" asp-append-version="true" />*@
+</head>
+<body>
+    <div class="cuerpo">
+        <nav class="toolbar">
+            <div class="botonestolbar">
+                <a class="titulotolbar" asp-page="/Index">Reseñas</a>
+                <a class="iniciotoolbar" asp-area="" asp-page="/Index">Inicio</a>
+                @if (SignInManager.IsSignedIn(User))
+                {
+            <a class="iniciotoolbar" asp-area="" asp-page="/logout">Salir</a>
+                }
+                @if (!SignInManager.IsSignedIn(User))
+                {
+            <a class="logintoolbar" asp-area="" asp-page="/LoginEx">Entrar</a>
+                    <a class="registertoolbar" asp-area="" asp-page="/RegisterEx">Registrarse</a>
+                }
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <p>Hola @User.Identity.Name!</p>
+                }
+            </div>
+        </nav>
+    @RenderBody()
+        <div class="barralateral">
+            <br /><br /><br />
+            @if (SignInManager.IsSignedIn(User))
+            {
+            
+            <h2><a asp-area="" asp-page="/AñadirPelicula">Añadir Pelicula</a></h2>
+
+            }
+            <h2>Menú búsqueda</h2>
+            <nav>
+                <ul>
+                    <li>
+                        <p>Ficción</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Ficción">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Ficción">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Humor</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Humor">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Humor">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Terror</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Terror">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Terror">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Romance</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Romance">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Romance">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <p>Acción</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Acción">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Acción">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Drama</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Drama">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Drama">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Ciencia ficción</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Ciencia Ficción">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Ciencia Ficción">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Aventura</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=aventura">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Aventura">Buscar series</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Animacion</p>
+                        <ul>
+                            <li><a href="/Peliculas?tematica=Animacion">Buscar películas</a></li>
+                            <li><a href="/series?tematica=Animacion">Buscar series</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <h2><a asp-area="" asp-page="/Lanzamientos">Proximos lanzamientos</a></h2>
+
+        </div>
+    </div>
+   
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Reseñas - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

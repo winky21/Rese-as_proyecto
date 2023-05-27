@@ -1,0 +1,216 @@
+﻿@page
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<link rel="stylesheet" type="text/css" href="~/css/Inicio.css">
+<!DOCTYPE html>
+@if (!SignInManager.IsSignedIn(User)) {
+<html>
+<head>
+    <title>Plataforma de Reseñas</title>
+    
+</head>
+
+<body>
+        <main>
+            <section>
+                <div class="review-card">
+                    <h2>Inicia sesión para poder dejar tu reseña</h2>
+                    <p>Para poder dejar tu reseña y contribuir a la plataforma, por favor inicia sesión.</p>
+                    <a asp-area="" asp-page="/LoginEx">Iniciar sesión</a>
+                </div>
+            </section>
+        <section>
+            <div class="review-card">
+            <h2>Buscar peliculas y series </h2>
+            <form>
+                <input type="text" placeholder="Buscar por título, género, año...">
+                        <button type="submit"><a asp-area="" asp-page="/LoginEx">Buscar</a></button>
+            </form>
+            </div>
+        </section>
+     
+        <section>
+            <div class="review-card">
+            <h2>Últimas Reseñas</h2>
+                <p>Ver reseñas de películas o series.</p>
+                    <a asp-area="" asp-page="/LoginEx">Leer más</a>
+            </div>
+            <!-- Repite el bloque review-card para más reseñas -->
+        </section>
+       
+    </main>
+        
+    
+    </body>
+    </html>
+}
+else
+{
+
+  <html>
+    <head>
+        <title>Plataforma de Reseñas</title>
+     
+    </head>
+   
+    <body>
+        
+           @*<section class ="movie-selection">
+                <div >
+                    <h2>Dejar aquí tu reseña</h2>
+                    <form>
+                        <div>
+                            <select>
+                                <option value="">Seleccionar película o serie</option>
+                                <option value="1">Buscar pelicula o serie nueva</option>
+                                <option value="2">Visto recientemente</option>
+                                <option value="3">Recomendado para ti</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Escribe tu reseña"></textarea>
+                        <button type="submit">Publicar reseña</button>
+                    </form>
+                </div>
+            </section>*@
+
+           @* <section class="s1">
+                    <h2>Dejar aquí tu reseña</h2>
+                    <form>
+                        <textarea placeholder="Escribe tu reseña"></textarea>
+                        <button type="submit">Publicar reseña</button>
+                    </form>
+            </section>
+
+            <section>
+                
+                    <h1>Buscar películas y series</h1>
+                    <form>
+                        <div class="dropdown">
+                            <input type="text" placeholder="Buscar por título, género, año...">
+                            <button class="dropdown-btn" type="button">&#9660;</button>
+                            <div class="dropdown-content">
+                                <a href="#">Título</a>
+                                <a href="#">Género</a>
+                                <a href="#">Año</a>
+                            </div>
+                        </div>
+                        <button type="submit">Buscar</button>
+                    </form>
+               
+            </section>*@
+
+            <section class ="review-card">
+                <div>
+                    <h3>Sección de listas personalizadas</h3>
+                    @*<nav >
+                        <ul>
+                           
+                            <li><a href="#">Crear lista nueva</a></li>
+                        </ul>
+                    </nav>*@
+                    <p>Aquí puedes crear y gestionar tus listas personalizadas de películas y series.</p>
+                <a asp-area="" asp-page="/Lista">Ver mi lista</a>
+                    
+                    
+                </div>
+            </section>
+
+        <section class="review-card">
+            <div>
+                <h3>Recomendaciones</h3>
+                <p>Aquí puedes ver recomendaciones de películas y series.</p>
+                <a asp-area="" asp-page="/Recomendaciones">Recomendaciones</a>
+
+
+            </div>
+        </section>
+
+
+            @*<h2 class="lista">MI LISTA</h2>
+                <div class="card">
+                    <h2>Superbad</h2>
+                    <p>Tres amigos tratan de conseguir alcohol para una fiesta y vivir una noche épica antes de graduarse.</p>
+                <p class="rating">8.5/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+                </div>
+
+                <div class="card">
+                    <h2>Step Brothers</h2>
+                    <p>Dos hombres adultos inmaduros se convierten en hermanastros y se meten en todo tipo de situaciones cómicas.</p>
+                <p class="rating">7.5/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+                </div>
+
+                <div class="card">
+                    <h2>Bridesmaids</h2>
+                    <p>Una dama de honor y sus amigas intentan hacer todo lo posible para que la boda sea perfecta, pero las cosas no salen como esperaban.</p>
+                <p class="rating">8/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+                </div>
+
+                <div class="card">
+                    <h2>The Hangover</h2>
+                    <p>Después de una noche de desenfreno en Las Vegas, un grupo de amigos se despierta sin recordar lo que sucedió y deben encontrar al novio desaparecido antes de la boda.</p>
+                <p class="rating">8.3/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+                </div>
+
+                <div class="card">
+                    <h2>Mean Girls</h2>
+                    <p>Una adolescente nueva en la escuela se enfrenta a las abejas reinas y trata de encontrar su lugar en un mundo de popularidad y drama adolescente.</p>
+                <p class="rating">7.9/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+                </div>
+            <div class="card">
+                <h2>La La Land</h2>
+                <p>Un pianista de jazz y una aspirante a actriz se enamoran en Los Ángeles mientras persiguen sus sueños, enfrentando desafíos y desilusiones en el camino.</p>
+                <p class="rating">9.2/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+            </div>
+
+            <div class="card">
+                <h2>The Grand Budapest Hotel</h2>
+                <p>Un conserje excéntrico y su joven aprendiz se ven envueltos en una serie de eventos extravagantes en un famoso hotel europeo.</p>
+                <p class="rating">9.1/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+            </div>
+
+            <div class="card">
+                <h2>Anchorman: The Legend of Ron Burgundy</h2>
+                <p>Un carismático presentador de noticias de la década de 1970 se enfrenta a cambios y rivalidades en la industria de los medios de comunicación.</p>
+                <p class="rating">8.2/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+            </div>
+
+            <div class="card">
+                <h2>Wedding Crashers</h2>
+                <p>Dos amigos se cuelan en bodas para conocer a mujeres, pero se encuentran en una situación complicada cuando uno de ellos se enamora de una de las novias.</p>
+                <p class="rating">6.5/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+            </div>
+
+            <div class="card">
+                <h2>Super Troopers</h2>
+                <p>Un grupo de inadaptados policías estatales intenta evitar que su comisaría sea cerrada, mientras se involucran en travesuras y situaciones cómicas.</p>
+                <p class="rating">8.1/10</p>
+                <a class="reviews-link" href="enlace_a_las_resenas">Leer reseñas</a>
+            </div>*@
+            
+    
+           @* <section class="s3">
+                <div class="box-shadow" >
+                    <h1>Sección de listas personalizadas</h1>
+                    <p>Aquí puedes crear y gestionar tus listas personalizadas de películas y series.</p>
+                    <a href="#" class="read-more">Ver mis listas</a>
+                </div>
+            </section>*@
+        
+     </body>
+   </html>
+}

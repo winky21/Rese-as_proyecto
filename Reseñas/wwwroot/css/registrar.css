@@ -1,0 +1,105 @@
+﻿#registerForm {
+    margin-top: 20px;
+    padding: 2em;
+    width: 20em;
+    position: relative;
+    background-color: #bdc7f8;
+    position: relative;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    #registerForm input {
+        text-align: center;
+        width: 22em;
+    }
+
+    #registerForm h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 1rem;
+        color: cadetblue;
+    }
+
+    #registerForm hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: white;
+        width: 20em;
+    }
+
+    #registerForm .form-floating {
+        margin-bottom: 10px;
+        position: relative;
+        width: 20em;
+    }
+
+        #registerForm .form-floating label {
+            pointer-events: none;
+            opacity: 0.5;
+            transform-origin: top left;
+            transition: all 0.2s ease-out;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            font-size: 12px;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: left;
+        }
+
+        #registerForm .form-floating input,
+        #registerForm .form-floating select {
+            height: 40px;
+            padding: 10px;
+            padding-top: 1.625rem;
+        }
+
+        #registerForm .form-floating span.text-danger {
+            font-size: 12px;
+        }
+
+@media (min-width: 768px) {
+    /* Estilos para pantallas medianas y grandes */
+    #registerForm {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+        #registerForm h2 {
+            font-size: 24px;
+        }
+
+        #registerForm .form-floating label {
+            font-size: 14px;
+            top: 1.625rem; /* Ajusta este valor según sea necesario */
+            font-size: 0.875rem;
+        }
+
+    #registerSubmit {
+        font-weight:bold;
+        width: 10em;
+        height: 3em;
+        margin-top: 2em;
+        align-content: center;
+        background-color: cadetblue;
+        color: white;
+    }
+
+        #registerSubmit:hover {
+            background-color: darkgreen;
+        }
+}
+
+.row {
+    position: relative;
+    top: 0em;
+    width: 20em;
+    margin-top: 5em;
+    margin-left: 50em;
+    background-color: #bdc7f8;
+    width: 30em;
+    border: 1px solid white;
+}

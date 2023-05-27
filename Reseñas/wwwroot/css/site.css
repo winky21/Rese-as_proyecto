@@ -1,0 +1,172 @@
+html {
+ 
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("../Imagenes/foto.jpg");
+    background-position: 0 50px;
+    display:flow;
+    position: relative;
+    min-height:100vh;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/*html {
+  position: relative;*/
+  /*min-height: 100%;*/
+/*}*/
+.cuerpo{
+    min-height:90vh;
+}
+
+/* Estilos de pie de página */
+footer {
+    background-color: #bdc7F8;
+    color: #ffffff;
+    padding: 3em;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+.barralateral {
+    background-color: cadetblue;
+    width: 15em;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 6em;
+    padding-left: 1em;
+    color: #bdc7F8;
+}
+/*.barralateral {
+    background-color: #f8f9fa;
+    width: 250px;
+    padding: 20px;
+}
+*/
+.barralateral h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.barralateral nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .barralateral nav ul li {
+        margin-bottom: 10px;
+    }
+
+        .barralateral nav ul li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .barralateral nav ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+            .barralateral nav ul li a:hover {
+                background-color: #ccc;
+            }
+
+    .barralateral nav ul ul {
+        margin-left: 20px;
+        display: none;
+    }
+
+    .barralateral nav ul li:hover > ul {
+        display: block;
+    }
+
+@media (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+    .barralateral {
+        width: 100%;
+    }
+
+        .barralateral h2 {
+            text-align: center;
+        }
+
+        .barralateral nav ul li p {
+            font-size: 16px;
+        }
+
+        .barralateral nav ul li a {
+            padding: 10px;
+        }
+
+        .barralateral nav ul ul {
+            margin-left: 0;
+        }
+}
+
+.toolbar {
+    background-color: #bdc7F8;
+    padding: 0.5em;
+    height: 5em;
+}
+
+    .toolbar a {
+        
+        margin-right: 10px;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    .toolbar p {
+        text-align: center;
+        /*vertical-align: central;*/
+    }
+
+.titulotolbar {
+    color: #333;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.iniciotoolbar {
+    background-color: cadetblue;
+}
+
+.logintoolbar,
+.registertoolbar {
+    background-color: #007bff;
+    color: white;
+    vertical-align:central;
+    position:relative;
+    left:90em;
+    font-weight:bold;
+    
+}
+
+    .logintoolbar:hover,
+    .registertoolbar:hover {
+        background-color: #0056b3;
+        color:white;
+    }
+.botonestolbar{
+    padding:1em;
+    /*padding-bottom:10em;*/
+}
+/*.logintoolbar{
+   
+}
+.registertoolbar {
+    position: relative;
+    left: 95em;
+}*/

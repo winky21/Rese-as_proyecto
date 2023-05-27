@@ -1,0 +1,19 @@
+﻿@page
+@model Reseñas.Pages.SeriesModel
+@{
+}
+<link rel="stylesheet" type="text/css" href="~/css/Inicio.css">
+
+<h2 class="lista">Series por Tematica</h2>
+
+@foreach (var serie in Model.Series)
+{
+    <div class="card">
+        <h2>@serie.Titulo</h2>
+        <p>@serie.Descripcion</p>
+        <p>Año: @serie.Año</p>
+        <p class="rating">Puntuacion: @serie.Rating</p>
+        <a class="reviews-link" href="">Leer reseñas</a>
+        <p><a class="reviews-link" href="">Añadir a mi lista</a></p>
+    </div>
+}
